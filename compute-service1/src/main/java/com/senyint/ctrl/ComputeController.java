@@ -16,13 +16,13 @@ public class ComputeController {
 
 	@Autowired
 	private EurekaClient client;
-	
+
 	@RequestMapping("/test")
-	public String test(@RequestParam String a){
-		
+	public String test(@RequestParam String a) {
+
 		Applications applications = client.getApplications();
 		List<Application> registeredApplications = applications.getRegisteredApplications();
 		System.out.println("I am compute-service 1");
-		return a;
+		return "I am 2223:" + a;
 	}
 }
