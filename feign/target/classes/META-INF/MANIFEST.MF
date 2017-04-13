@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: feign
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Administrator
+Built-By: hanpeng
 Implementation-Vendor-Id: com.senyint
 Build-Jdk: 1.8.0_91
 Created-By: Maven Integration for Eclipse

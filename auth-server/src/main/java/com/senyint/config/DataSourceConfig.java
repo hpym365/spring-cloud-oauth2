@@ -2,7 +2,6 @@ package com.senyint.config;
 
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
