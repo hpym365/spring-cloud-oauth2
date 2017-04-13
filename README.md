@@ -18,3 +18,6 @@ sso port 7777
 
 访问先走 security的十几个过滤器  通过delegatingFilterProxy先走
 然后再走zuul的自己的过滤器  
+
+
+github url:https://github.com/hpym365/spring-cloud-demo.git
