@@ -15,6 +15,7 @@ public class CustomFilter extends ZuulFilter {
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
 		Object accessToken = request.getParameter("accessToken");
+		// http://localhost:5555/test?a=2&accessToken=123
 		System.out.println("123123123");
 		if (accessToken == null) {
 			ctx.setSendZuulResponse(false);

@@ -20,12 +20,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource dataSource;
 	
-	
-
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		//onfigureGlobal(AuthenticationManagerBuilder auth)方法，在内存中创建了一个用户，该用户的名称为user，密码为password，用户角色为USER。
 		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("USER");
+		auth.inMemoryAuthentication().withUser("test").password("test").roles("TEST");
 		
 //		auth.jdbcAuthentication().dataSource(dataSource);// 设置为从数据库读取用户认证信息(JdbcUserdetailsService)
 	}

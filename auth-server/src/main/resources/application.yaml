@@ -6,7 +6,7 @@
 #      id: user
 #      user-info-uri: http://auth-server/uaa/user # auth-server 是注册到eureka的服务名称
 #      prefer-token-info: false # 不使用/oauth/check_token,因为不能负载均衡 使用在auth-server端实现的 /user api.
-server.port: 8080
+server.port: 5656
 
 spring.application.name: auth-server
 

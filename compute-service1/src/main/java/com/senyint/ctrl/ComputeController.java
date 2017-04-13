@@ -23,6 +23,11 @@ public class ComputeController {
 		Applications applications = client.getApplications();
 		List<Application> registeredApplications = applications.getRegisteredApplications();
 		System.out.println("I am compute-service 1");
-		return "I am 2223:" + a;
+		return "I am 2223 the string is:" + a;
+	}
+
+	@RequestMapping("/")
+	public String succ() {
+		return "登录成功了！";
 	}
 }
