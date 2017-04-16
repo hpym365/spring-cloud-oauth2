@@ -1,24 +1,37 @@
-spring.application.name: zuul
+spring:
+  aop:
+    proxyTargetClass: true
+  application:
+    name: zuul
 server.port: 5555
 #zuul.routes.serva.path=/serva/**
 #zuul.routes.serva.url=http://localhost:2222/
 
 
-zuul.routes.serva.path: /**
-zuul.routes.serva.serviceId: compute-service
+zuul:
+  routes:
+    compute-service:
+      path: /app/**
+    auth-server:
+      sensitiveHeaders:
+      path: /uaa/**
+      stripPrefix: false #去掉前缀 直接映射到根  不然的话访问/uaa/uaa/oauth...
+      add-proxy-headers: true
 
 eureka.client.serviceUrl.defaultZone: http://localhost:1111/eureka/
 debug: true
 
 
 security:
+  basic:
+    enabled: false
   user:
     password: user
   ignored: /,/favicon.ico,/index.html,/home.html,/dashboard.html,/js/**,/css/**,/webjars/**
   sessions: ALWAYS
   oauth2:
     sso:
-      loginPath: /test/login
+      loginPath: /login
 management:
   security:
     role: HERO
@@ -34,8 +47,8 @@ spring:
 security:
   oauth2:
     client:
-      accessTokenUri: http://localhost:5656/uaa/oauth/token
-      userAuthorizationUri: http://localhost:5656/uaa/oauth/authorize
+      accessTokenUri: http://localhost:5555/uaa/oauth/token
+      userAuthorizationUri: /uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
     resource:

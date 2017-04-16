@@ -17,11 +17,11 @@ public class CustomFilter extends ZuulFilter {
 		Object accessToken = request.getParameter("accessToken");
 		// http://localhost:5555/test?a=2&accessToken=123
 		System.out.println("123123123");
-		if (accessToken == null) {
-			ctx.setSendZuulResponse(false);
-			ctx.setResponseStatusCode(401);
-			return null;
-		}
+//		if (accessToken == null) {
+//			ctx.setSendZuulResponse(false);
+//			ctx.setResponseStatusCode(401);
+//			return null;
+//		}
 		// 连接redis验证用户信息
 		return null;
 	}
