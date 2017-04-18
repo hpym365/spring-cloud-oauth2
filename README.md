@@ -12,12 +12,9 @@ auth-ser port 5656
 
 sso port 7777
 
-访问:http://localhost:5555/test?a=2&accessToken=123
+访问:http://localhost:5555/app/test?a=2&accessToken=123
 使用用户 admin admin 登录  会看到页面
 使用test test登录会提示无访问权限
 
 访问先走 security的十几个过滤器  通过delegatingFilterProxy先走
 然后再走zuul的自己的过滤器  
-
-
-github url:https://github.com/hpym365/spring-cloud-demo.git
